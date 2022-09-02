@@ -1,0 +1,47 @@
+.testimonials {
+    padding: 25px;
+    text-align: center;
+    &__container {
+        margin: auto;
+        @include flex-justify;
+        align-items: stretch;
+        gap: 10px;
+    }
+}
+
+.testimony {
+    max-width: 200px;
+    border: 2px solid black;
+    color: white;
+    font-family: $rubik;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    padding: 40px 20px 15px 20px;
+    @include flex-justify(space-between);
+    flex-direction: column;
+    &__text {
+        text-shadow: 1px 1px 5px black;
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url("../../../images/quote.png");
+            background-size: cover;
+        }
+        &::before {
+            top: -25px;
+            left: -5px;
+        }
+        &::after {
+            bottom: -20px;
+            right: -5px;
+            transform: scaleX(-1);
+        }
+    }
+    &__name {
+        margin-top: 20px;
+    }
+}

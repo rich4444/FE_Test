@@ -1,0 +1,62 @@
+nav {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    background-color: $main-bg-color;
+    box-shadow: 0 -5px 10px 5px black;
+
+    .navbar-container {
+        max-width: $max-width-large;
+        margin: auto;
+        padding: 8px;
+
+        @include flex-justify(space-between);
+
+        .navbar-logo {
+            width: 100px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+
+            &__item {
+                color: white;
+                font-family: $saira--condensed;
+                font-weight: 700;
+                font-size: 0.8rem;
+            }
+        }
+
+        .user-buttons {
+            &__join-button {
+                @include button-style(
+                    $highlight-color,
+                    white,
+                    30px,
+                    0.8rem,
+                    $saira--condensed,
+                    700
+                );
+                box-shadow: 0 2px 1px 0 black;
+                margin-right: 10px;
+            }
+            &__login-button {
+                @include button-style(
+                    transparent,
+                    $highlight-color,
+                    0,
+                    0.8rem,
+                    $saira--condensed,
+                    700
+                );
+                padding: 0;
+            }
+            &__join-button,
+            &__login-button {
+                border: none;
+            }
+        }
+    }
+}

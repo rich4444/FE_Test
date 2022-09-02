@@ -1,0 +1,16 @@
+.section-perks {
+    margin-top: 20px;
+    @include flex-justify(space-between);
+    .perk {
+        @include flex-justify;
+        &__icon {
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        &__text--bold {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    }
+}

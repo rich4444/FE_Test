@@ -1,0 +1,23 @@
+.section-more-info {
+    margin-top: 20px;
+
+    @include flex-justify(space-between);
+    gap: 10px;
+    .info-card {
+        flex: 1;
+        background-color: $sections-bg-color;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+
+        &__title {
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        &__button {
+            @include button-style(transparent, white, 5px, 0.7rem, $rubik, 400);
+        }
+    }
+}

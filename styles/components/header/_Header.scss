@@ -1,0 +1,48 @@
+header {
+    height: 250px;
+    padding: 60px;
+
+    @include flex-justify(space-between);
+
+    background-color: black;
+    background-image: url("../../../images/hero-banner.jpeg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    .left-elements {
+        &__title {
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        &__button {
+            width: 100%;
+            @include button-style(
+                $highlight-color,
+                white,
+                5px,
+                1.2rem,
+                $saira--condensed,
+                700
+            );
+            border: 2px solid white;
+        }
+    }
+
+    .right-elements {
+        text-align: right;
+        &__subtitle {
+            margin-bottom: 5px;
+        }
+        &__button {
+            @include button-style(
+                transparent,
+                $highlight-color,
+                5px,
+                0.75rem,
+                $rubik,
+                400
+            );
+        }
+    }
+}

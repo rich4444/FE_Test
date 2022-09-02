@@ -1,0 +1,104 @@
+footer {
+    background-color: white;
+}
+
+.footer-container {
+    max-width: $max-width-large;
+    margin: auto;
+    @include flex-justify(space-between);
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px;
+}
+
+.trusted-exp {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: center;
+    &__logo {
+        margin: auto;
+        max-height: 15px;
+    }
+
+    &__cryptos,
+    &__payments {
+        @include flex-justify(space-between);
+        gap: 5px;
+    }
+
+    *img {
+        height: 20px;
+    }
+}
+
+.about-us {
+    max-width: 300px;
+
+    &__text {
+        font-family: $rubik;
+        font-size: 0.7rem;
+        line-height: 1.1;
+    }
+}
+
+.customer-serv {
+    &__links {
+        list-style: none;
+        font-family: $rubik;
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    &__link {
+        &#follow-us {
+            position: relative;
+            .social-media {
+                position: absolute;
+                top: -7px;
+                right: 30px;
+                &:last-child {
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    *img {
+        height: 25px;
+    }
+}
+
+.footer-bottom {
+    background-color: $highlight-color;
+    height: 30px;
+    .footer-bottom__container {
+        max-width: $max-width-large;
+        margin: auto;
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 50px;
+    }
+    .footer-bottom__join-instantly{
+        @include button-style(
+            $highlight-color,
+            white,
+            5px,
+            .7rem,
+            $saira--condensed,
+            600
+        );
+        padding: 0 20px;
+    }
+    .footer-bottom__text{
+        font-family: $rubik;
+        font-size: 0.6rem;
+        color: white;
+    }
+}

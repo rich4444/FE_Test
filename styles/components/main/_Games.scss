@@ -1,0 +1,157 @@
+.section-games {
+    @include flex-justify;
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+    .games-container {
+        background-color: $sections-bg-color;
+        width: 100%;
+        @include flex-justify;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 5px 10px;
+        .games-container__text {
+            margin-top: 10px;
+            .games-container__subtitle {
+                color: $highlight-color;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+//GAMES GROUP
+.games-group {
+    width: 100%;
+    flex: 1;
+    &__title {
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 7px 20px;
+        margin-bottom: 15px;
+    }
+    &__cards-container {
+        @include flex-justify;
+        width: 100%;
+        margin-bottom: 20px;
+        gap: 5px;
+    }
+
+    &__view-more {
+        @include button-style(transparent, white, 5px, 0.7rem, $rubik, 400);
+        padding: 8px 25px;
+        margin-bottom: 30px;
+    }
+}
+
+//CARD
+.card {
+    height: 160px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    &__image-container {
+        height: 100%;
+        overflow: hidden;
+    }
+    &__card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in;
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+    &__card-title-container {
+        height: 60px;
+        display: grid;
+        place-content: center;
+    }
+    &__card-title {
+        line-height: 1.3;
+    }
+}
+
+.games-group.games-group--purple {
+    .games-group__title {
+        background-color: $purple;
+    }
+    .card__card-title-container {
+        background-color: $purple;
+    }
+    .games-group__view-more {
+        border-color: $purple;
+    }
+}
+
+.games-group.games-group--yellow {
+    .games-group__title {
+        background-color: $yellow;
+        color: black;
+    }
+    .card__card-title-container {
+        background-color: $yellow;
+        .card__card-title {
+            color: black;
+        }
+    }
+    .games-group__view-more {
+        border-color: $yellow;
+    }
+}
+
+.games-group.games-group--orange {
+    .games-group__title {
+        background-color: $orange;
+    }
+    .card__card-title-container {
+        background-color: $orange;
+    }
+    .games-group__view-more {
+        border-color: $orange;
+    }
+}
+
+.games-group.games-group--red {
+    .games-group__title {
+        background-color: $red;
+    }
+    .card__card-title-container {
+        background-color: $red;
+    }
+    .games-group__view-more {
+        border-color: $red;
+    }
+}
+
+.games-group.games-group--green {
+    .games-group__title {
+        background-color: $green;
+        color: black;
+    }
+    .card__card-title-container {
+        background-color: $green;
+        .card__card-title {
+            color: black;
+        }
+    }
+    .games-group__view-more {
+        border-color: $green;
+    }
+}
+
+.games-group.games-group--blue {
+    .games-group__title {
+        background-color: $blue;
+    }
+    .card__card-title-container {
+        background-color: $blue;
+    }
+    .games-group__view-more {
+        border-color: $blue;
+    }
+}
