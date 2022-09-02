@@ -5,7 +5,7 @@ header {
     @include flex-justify(space-between);
 
     background-color: black;
-    background-image: url("../../../images/hero-banner.jpeg");
+    background-image: url(../../../images/hero-banner.jpeg);
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
