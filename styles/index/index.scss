@@ -1,0 +1,18 @@
+//Fonts
+@import url("https://use.typekit.net/rsw3bla.css");
+@import url("http://fonts.cdnfonts.com/css/saira");
+@import url("http://fonts.cdnfonts.com/css/saira-condensed");
+
+//General
+@import "../variables/Variables";
+@import "../mixins/Mixins";
+@import "../general/General";
+
+//Components
+@import "../navbar/Nav";
+@import "../header/Header";
+@import "../main/MoreInfo";
+@import "../main/Perks";
+@import "../main/Games";
+@import "../main/Testimonials";
+@import "../footer/Footer";
