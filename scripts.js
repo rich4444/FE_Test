@@ -93,3 +93,16 @@ function testimonySlide(fordward) {
     //Call again the interval
     testimonyInterval = setInterval(() => testimonySlide(fordward), slidesTime);
 }
+
+// NAVBAR ---------------------------
+const navbar = document.getElementsByClassName("navbar")[0];
+const user = document.getElementsByClassName("user-buttons")[0];
+const closeOpenButton = document.getElementsByClassName("open-close-navbar")[0];
+
+closeOpenButton.addEventListener("click", () => {
+    navbar.classList.toggle("closed");
+    user.classList.toggle("closed");
+    closeOpenButton.classList.toggle("closed");
+    document.body.style.overflowY =
+        document.body.style.overflowY === "hidden" ? "visible" : "hidden";
+});

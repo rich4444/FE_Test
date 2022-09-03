@@ -59,9 +59,9 @@ footer {
             .social-media {
                 position: absolute;
                 top: -7px;
-                right: 30px;
+                left: 70px;
                 &:last-child {
-                    right: 0;
+                    left: 100px;
                 }
             }
         }
@@ -79,26 +79,74 @@ footer {
         max-width: $max-width-large;
         margin: auto;
         height: 100%;
-        
+
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 50px;
     }
-    .footer-bottom__join-instantly{
+    .footer-bottom__join-instantly {
         @include button-style(
             $highlight-color,
             white,
             5px,
-            .7rem,
+            0.7rem,
             $saira--condensed,
             600
         );
         padding: 0 20px;
     }
-    .footer-bottom__text{
+    .footer-bottom__text {
         font-family: $rubik;
         font-size: 0.6rem;
         color: white;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .footer-container {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .about-us {
+        grid-column: 1 / 3;
+        grid-row: 1 / 1;
+        max-width: 100%;
+        border-bottom: 1px solid $highlight-color;
+        padding-bottom: 10px;
+    }
+
+    .customer-serv {
+        grid-row: 2;
+    }
+
+    .footer-bottom {
+        height: 100%;
+        .footer-bottom__container {
+            max-width: 100%;
+            padding: 10px;
+        }
+        .footer-bottom__join-instantly {
+            padding: 5px 10px;
+        }
+        .footer-bottom__text {
+            max-width: 50%;
+            text-align: right;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-small-phone) {
+    .about-us {
+        grid-column: 1;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    .customer-serv {
+        grid-column: 1;
     }
 }
