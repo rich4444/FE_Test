@@ -10,13 +10,13 @@
         flex-direction: column;
         border-radius: 5px;
         padding: 5px 10px;
-        .games-container__text {
+        &__text {
             margin-top: 10px;
-            .games-container__subtitle {
-                color: $highlight-color;
-                letter-spacing: 1px;
-                margin-bottom: 20px;
-            }
+        }
+        &__subtitle {
+            color: $highlight-color;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
     }
 }
@@ -33,9 +33,10 @@
     }
     &__cards-container {
         @include flex-justify;
+        position: relative;
         width: 100%;
         margin-bottom: 20px;
-        gap: 5px;
+        gap: 10px;
     }
 
     &__view-more {
@@ -48,6 +49,7 @@
 //CARD
 .card {
     height: 160px;
+    width: 100%;
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
@@ -108,5 +110,50 @@ $colors: purple, yellow, blue, orange, red, green;
     }
     .card__card-title-container .card__card-title {
         color: black;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .section-games {
+        gap: 50px;
+        margin-top: 40px;
+        flex-direction: column;
+        max-width: 600px;
+    }
+
+    .card {
+        min-height: 250px;
+        &:nth-child(3) {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-small-phone) {
+    .card {
+        $time-on-top: 4s;
+        &:nth-child(1) {
+            animation: changeCard $time-on-top * 3 0s infinite;
+        }
+        &:nth-child(2) {
+            animation: changeCard $time-on-top * 3 $time-on-top infinite;
+            position: absolute;
+        }
+        &:nth-child(3) {
+            display: inherit;
+            position: absolute;
+            animation: changeCard $time-on-top * 3 $time-on-top * 2 infinite;
+        }
+        @keyframes changeCard {
+            0% {
+                z-index: 5;
+            }
+            33% {
+                z-index: 5;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
     }
 }

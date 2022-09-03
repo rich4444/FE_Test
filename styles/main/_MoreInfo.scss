@@ -1,18 +1,22 @@
 .section-more-info {
+    height: 100%;
     margin-top: 20px;
     @include flex-justify(space-between);
+    align-items: stretch;
     gap: 10px;
     &__bckBtn,
     &__nxtBtn {
         display: none;
     }
     .info-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         flex: 1;
         background-color: $sections-bg-color;
         text-align: center;
         padding: 20px;
         border-radius: 5px;
-        height: 100%;
 
         &__title {
             font-size: 1.1rem;
