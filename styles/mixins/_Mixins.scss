@@ -16,6 +16,10 @@
     font-family: $font-family;
     font-size: $font-size;
     font-weight: $font-weight;
+    @include buttons-efect($bg-color);
+}
+
+@mixin buttons-efect($bg-color) {
     //add shadows
     &:hover {
         background: darken($bg-color, 8%);

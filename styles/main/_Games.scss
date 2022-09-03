@@ -76,82 +76,37 @@
     }
 }
 
-.games-group.games-group--purple {
-    .games-group__title {
-        background-color: $purple;
-    }
-    .card__card-title-container {
-        background-color: $purple;
-    }
-    .games-group__view-more {
-        border-color: $purple;
+$colorsVariables: (
+    blue: $blue,
+    green: $green,
+    orange: $orange,
+    red: $red,
+    purple: $purple,
+    yellow: $yellow,
+);
+
+$colors: purple, yellow, blue, orange, red, green;
+
+@each $color in $colors {
+    .games-group.games-group--#{"" + $color} {
+        .games-group__title {
+            background-color: map-get($colorsVariables, $color);
+        }
+        .card__card-title-container {
+            background-color: map-get($colorsVariables, $color);
+        }
+        .games-group__view-more {
+            border-color: map-get($colorsVariables, $color);
+        }
     }
 }
 
+.games-group.games-group--green,
 .games-group.games-group--yellow {
     .games-group__title {
-        background-color: $yellow;
         color: black;
     }
-    .card__card-title-container {
-        background-color: $yellow;
-        .card__card-title {
-            color: black;
-        }
-    }
-    .games-group__view-more {
-        border-color: $yellow;
-    }
-}
-
-.games-group.games-group--orange {
-    .games-group__title {
-        background-color: $orange;
-    }
-    .card__card-title-container {
-        background-color: $orange;
-    }
-    .games-group__view-more {
-        border-color: $orange;
-    }
-}
-
-.games-group.games-group--red {
-    .games-group__title {
-        background-color: $red;
-    }
-    .card__card-title-container {
-        background-color: $red;
-    }
-    .games-group__view-more {
-        border-color: $red;
-    }
-}
-
-.games-group.games-group--green {
-    .games-group__title {
-        background-color: $green;
+    .card__card-title-container .card__card-title {
         color: black;
-    }
-    .card__card-title-container {
-        background-color: $green;
-        .card__card-title {
-            color: black;
-        }
-    }
-    .games-group__view-more {
-        border-color: $green;
-    }
-}
-
-.games-group.games-group--blue {
-    .games-group__title {
-        background-color: $blue;
-    }
-    .card__card-title-container {
-        background-color: $blue;
-    }
-    .games-group__view-more {
-        border-color: $blue;
     }
 }

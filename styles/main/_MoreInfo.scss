@@ -1,8 +1,11 @@
 .section-more-info {
     margin-top: 20px;
-
     @include flex-justify(space-between);
     gap: 10px;
+    .section-more-info__bckBtn,
+    .section-more-info__nxtBtn {
+        display: none;
+    }
     .info-card {
         flex: 1;
         background-color: $sections-bg-color;
@@ -18,6 +21,77 @@
 
         &__button {
             @include button-style(transparent, white, 5px, 0.7rem, $rubik, 400);
+            width: 100%;
+        }
+    }
+}
+
+$breakpoint-tablet: 768px;
+
+@media (max-width: $breakpoint-tablet) {
+    .section-more-info {
+        position: relative;
+        max-width: 600px;
+        overflow: hidden;
+        padding: 0 20px;
+
+        .section-more-info__bckBtn,
+        .section-more-info__nxtBtn {
+            position: absolute;
+            display: block;
+            background-color: transparent;
+            border: none;
+            right: 0;
+            z-index: 1;
+            img {
+                width: 40px;
+            }
+            &:first-child {
+                transform: scaleX(-1);
+                right: auto;
+                left: 0;
+            }
+            &:hover {
+                filter: brightness(1.5);
+                transition: all 0.3s ease;
+            }
+            &:active {
+                filter: brightness(0.5);
+            }
+        }
+
+        .info-card {
+            //Hide cards that wont be show
+            &.pos0,
+            &.pos3,
+            &.pos4 {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: translateX(-110%);
+            }
+
+            &.pos1 {
+                order: 0;
+                animation: animateIn .7s ease forwards 1;
+            }
+            &.pos2 {
+                order: 1;
+                animation: animateIn1 .7s ease forwards 1;
+            }
+
+            //Duplicated keyframes to prevent errors when sliding fast
+            @keyframes animateIn {
+                from {
+                    filter: opacity(0) blur(5px);
+                }
+            }
+            @keyframes animateIn1 {
+                from {
+                    filter: opacity(0) blur(5px);
+                }
+            }
         }
     }
 }

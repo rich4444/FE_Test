@@ -55,3 +55,11 @@ section {
     max-width: $max-width-large;
     margin: auto;
 }
+
+@media (max-width: 1000px) {
+    header,
+    section,
+    nav {
+        padding: 10px;
+    }
+}

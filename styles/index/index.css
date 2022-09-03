@@ -61,6 +61,13 @@ section {
   margin: auto;
 }
 
+@media (max-width: 1000px) {
+  header,
+section,
+nav {
+    padding: 10px;
+  }
+}
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -206,6 +213,10 @@ header .right-elements__button:active {
   align-items: center;
   gap: 10px;
 }
+.section-more-info .section-more-info__bckBtn,
+.section-more-info .section-more-info__nxtBtn {
+  display: none;
+}
 .section-more-info .info-card {
   flex: 1;
   background-color: #1a1a1a;
@@ -229,6 +240,7 @@ header .right-elements__button:active {
   font-family: rubik, sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
+  width: 100%;
 }
 .section-more-info .info-card__button:hover {
   background: rgba(0, 0, 0, 0);
@@ -238,6 +250,79 @@ header .right-elements__button:active {
   background: rgba(0, 0, 0, 0);
 }
 
+@media (max-width: 768px) {
+  .section-more-info {
+    position: relative;
+    max-width: 600px;
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  .section-more-info .section-more-info__bckBtn,
+.section-more-info .section-more-info__nxtBtn {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    z-index: 1;
+  }
+  .section-more-info .section-more-info__bckBtn img,
+.section-more-info .section-more-info__nxtBtn img {
+    width: 40px;
+  }
+  .section-more-info .section-more-info__bckBtn:first-child,
+.section-more-info .section-more-info__nxtBtn:first-child {
+    transform: scaleX(-1);
+    right: auto;
+    left: 0;
+  }
+  .section-more-info .section-more-info__bckBtn:hover,
+.section-more-info .section-more-info__nxtBtn:hover {
+    filter: brightness(1.5);
+    transition: all 0.3s ease;
+  }
+  .section-more-info .section-more-info__bckBtn:active,
+.section-more-info .section-more-info__nxtBtn:active {
+    filter: brightness(0.5);
+  }
+  .section-more-info .info-card.pos0, .section-more-info .info-card.pos3, .section-more-info .info-card.pos4 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+  }
+  .section-more-info .info-card.pos1 {
+    order: 0;
+    -webkit-animation: animateIn 0.7s ease forwards 1;
+            animation: animateIn 0.7s ease forwards 1;
+  }
+  .section-more-info .info-card.pos2 {
+    order: 1;
+    -webkit-animation: animateIn1 0.7s ease forwards 1;
+            animation: animateIn1 0.7s ease forwards 1;
+  }
+  @-webkit-keyframes animateIn {
+    from {
+      filter: opacity(0) blur(5px);
+    }
+  }
+  @keyframes animateIn {
+    from {
+      filter: opacity(0) blur(5px);
+    }
+  }
+  @-webkit-keyframes animateIn1 {
+    from {
+      filter: opacity(0) blur(5px);
+    }
+  }
+  @keyframes animateIn1 {
+    from {
+      filter: opacity(0) blur(5px);
+    }
+  }
+}
 .section-perks {
   margin-top: 20px;
   display: flex;
@@ -368,16 +453,22 @@ header .right-elements__button:active {
 
 .games-group.games-group--yellow .games-group__title {
   background-color: #effd5f;
-  color: black;
 }
 .games-group.games-group--yellow .card__card-title-container {
   background-color: #effd5f;
 }
-.games-group.games-group--yellow .card__card-title-container .card__card-title {
-  color: black;
-}
 .games-group.games-group--yellow .games-group__view-more {
   border-color: #effd5f;
+}
+
+.games-group.games-group--blue .games-group__title {
+  background-color: #0d49f5;
+}
+.games-group.games-group--blue .card__card-title-container {
+  background-color: #0d49f5;
+}
+.games-group.games-group--blue .games-group__view-more {
+  border-color: #0d49f5;
 }
 
 .games-group.games-group--orange .games-group__title {
@@ -402,26 +493,21 @@ header .right-elements__button:active {
 
 .games-group.games-group--green .games-group__title {
   background-color: #6fe3a6;
-  color: black;
 }
 .games-group.games-group--green .card__card-title-container {
   background-color: #6fe3a6;
-}
-.games-group.games-group--green .card__card-title-container .card__card-title {
-  color: black;
 }
 .games-group.games-group--green .games-group__view-more {
   border-color: #6fe3a6;
 }
 
-.games-group.games-group--blue .games-group__title {
-  background-color: #0d49f5;
+.games-group.games-group--green .games-group__title,
+.games-group.games-group--yellow .games-group__title {
+  color: black;
 }
-.games-group.games-group--blue .card__card-title-container {
-  background-color: #0d49f5;
-}
-.games-group.games-group--blue .games-group__view-more {
-  border-color: #0d49f5;
+.games-group.games-group--green .card__card-title-container .card__card-title,
+.games-group.games-group--yellow .card__card-title-container .card__card-title {
+  color: black;
 }
 
 .testimonials {
