@@ -35,3 +35,85 @@
     justify-content: $justify;
     align-items: center;
 }
+
+@mixin slider-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: block;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    z-index: 1;
+    img {
+        width: 40px;
+    }
+    &:first-child {
+        transform: translate(0,-50%) scaleX(-1);
+        right: auto;
+        left: 0;
+    }
+    &:hover {
+        filter: brightness(1.5);
+        transition: all 0.3s ease;
+    }
+    &:active {
+        filter: brightness(0.5);
+    }
+}
+
+@mixin sliders {
+    //Hide elements that wont be show
+    &.pos0,
+    &.pos4 {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(-110%);
+    }
+
+    &.pos1 {
+        order: 0;
+        animation: animateIn 0.3s ease forwards 1;
+    }
+    &.pos2 {
+        order: 1;
+        animation: animateIn1 0.3s ease forwards 1;
+    }
+    &.pos3 {
+        order: 2;
+        animation: animateIn2 0.3s ease forwards 1;
+    }
+
+    //Duplicated keyframes to prevent errors when sliding fast
+    @keyframes animateIn {
+        from {
+            transform: scale(0.7);
+            filter: opacity(0) blur(10px);
+        }
+    }
+    @keyframes animateIn1 {
+        from {
+            transform: scale(0.7);
+            filter: opacity(0) blur(10px);
+        }
+    }
+    @keyframes animateIn2 {
+        from {
+            transform: scale(0.7);
+            filter: opacity(0) blur(10px);
+        }
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        &.pos3 {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(-110%);
+            animation: none;
+        }
+    }
+}

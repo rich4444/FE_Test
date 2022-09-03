@@ -213,8 +213,7 @@ header .right-elements__button:active {
   align-items: center;
   gap: 10px;
 }
-.section-more-info .section-more-info__bckBtn,
-.section-more-info .section-more-info__nxtBtn {
+.section-more-info__bckBtn, .section-more-info__nxtBtn {
   display: none;
 }
 .section-more-info .info-card {
@@ -223,6 +222,7 @@ header .right-elements__button:active {
   text-align: center;
   padding: 20px;
   border-radius: 5px;
+  height: 100%;
 }
 .section-more-info .info-card__title {
   font-size: 1.1rem;
@@ -257,35 +257,32 @@ header .right-elements__button:active {
     overflow: hidden;
     padding: 0 20px;
   }
-  .section-more-info .section-more-info__bckBtn,
-.section-more-info .section-more-info__nxtBtn {
+  .section-more-info__bckBtn, .section-more-info__nxtBtn {
     position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
     display: block;
     background-color: transparent;
     border: none;
     right: 0;
     z-index: 1;
   }
-  .section-more-info .section-more-info__bckBtn img,
-.section-more-info .section-more-info__nxtBtn img {
+  .section-more-info__bckBtn img, .section-more-info__nxtBtn img {
     width: 40px;
   }
-  .section-more-info .section-more-info__bckBtn:first-child,
-.section-more-info .section-more-info__nxtBtn:first-child {
-    transform: scaleX(-1);
+  .section-more-info__bckBtn:first-child, .section-more-info__nxtBtn:first-child {
+    transform: translate(0, -50%) scaleX(-1);
     right: auto;
     left: 0;
   }
-  .section-more-info .section-more-info__bckBtn:hover,
-.section-more-info .section-more-info__nxtBtn:hover {
+  .section-more-info__bckBtn:hover, .section-more-info__nxtBtn:hover {
     filter: brightness(1.5);
     transition: all 0.3s ease;
   }
-  .section-more-info .section-more-info__bckBtn:active,
-.section-more-info .section-more-info__nxtBtn:active {
+  .section-more-info__bckBtn:active, .section-more-info__nxtBtn:active {
     filter: brightness(0.5);
   }
-  .section-more-info .info-card.pos0, .section-more-info .info-card.pos3, .section-more-info .info-card.pos4 {
+  .section-more-info .info-card.pos0, .section-more-info .info-card.pos4 {
     position: absolute;
     height: 100%;
     top: 0;
@@ -294,33 +291,65 @@ header .right-elements__button:active {
   }
   .section-more-info .info-card.pos1 {
     order: 0;
-    -webkit-animation: animateIn 0.7s ease forwards 1;
-            animation: animateIn 0.7s ease forwards 1;
+    -webkit-animation: animateIn 0.3s ease forwards 1;
+            animation: animateIn 0.3s ease forwards 1;
   }
   .section-more-info .info-card.pos2 {
     order: 1;
-    -webkit-animation: animateIn1 0.7s ease forwards 1;
-            animation: animateIn1 0.7s ease forwards 1;
+    -webkit-animation: animateIn1 0.3s ease forwards 1;
+            animation: animateIn1 0.3s ease forwards 1;
+  }
+  .section-more-info .info-card.pos3 {
+    order: 2;
+    -webkit-animation: animateIn2 0.3s ease forwards 1;
+            animation: animateIn2 0.3s ease forwards 1;
   }
   @-webkit-keyframes animateIn {
     from {
-      filter: opacity(0) blur(5px);
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
     }
   }
   @keyframes animateIn {
     from {
-      filter: opacity(0) blur(5px);
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
     }
   }
   @-webkit-keyframes animateIn1 {
     from {
-      filter: opacity(0) blur(5px);
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
     }
   }
   @keyframes animateIn1 {
     from {
-      filter: opacity(0) blur(5px);
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
     }
+  }
+  @-webkit-keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .section-more-info .info-card.pos3 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    -webkit-animation: none;
+            animation: none;
   }
 }
 .section-perks {
@@ -328,6 +357,9 @@ header .right-elements__button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.section-perks__bckBtn, .section-perks__nxtBtn {
+  display: none;
 }
 .section-perks .perk {
   display: flex;
@@ -343,6 +375,121 @@ header .right-elements__button:active {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .section-perks {
+    position: relative;
+    margin-top: 50px;
+    max-width: 600px;
+    min-height: 50px;
+    overflow: hidden;
+    padding: 0 20px;
+    justify-content: space-around;
+  }
+  .section-perks__bckBtn, .section-perks__nxtBtn {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    z-index: 1;
+  }
+  .section-perks__bckBtn img, .section-perks__nxtBtn img {
+    width: 40px;
+  }
+  .section-perks__bckBtn:first-child, .section-perks__nxtBtn:first-child {
+    transform: translate(0, -50%) scaleX(-1);
+    right: auto;
+    left: 0;
+  }
+  .section-perks__bckBtn:hover, .section-perks__nxtBtn:hover {
+    filter: brightness(1.5);
+    transition: all 0.3s ease;
+  }
+  .section-perks__bckBtn:active, .section-perks__nxtBtn:active {
+    filter: brightness(0.5);
+  }
+  .section-perks .perk {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .section-perks .perk.pos0, .section-perks .perk.pos4 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+  }
+  .section-perks .perk.pos1 {
+    order: 0;
+    -webkit-animation: animateIn 0.3s ease forwards 1;
+            animation: animateIn 0.3s ease forwards 1;
+  }
+  .section-perks .perk.pos2 {
+    order: 1;
+    -webkit-animation: animateIn1 0.3s ease forwards 1;
+            animation: animateIn1 0.3s ease forwards 1;
+  }
+  .section-perks .perk.pos3 {
+    order: 2;
+    -webkit-animation: animateIn2 0.3s ease forwards 1;
+            animation: animateIn2 0.3s ease forwards 1;
+  }
+  @-webkit-keyframes animateIn {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @-webkit-keyframes animateIn1 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn1 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @-webkit-keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .section-perks .perk.pos3 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+@media (max-width: 768px) {
+  .section-perks .perk__icon {
+    margin-right: 0;
+  }
+}
 .section-games {
   display: flex;
   justify-content: center;
@@ -522,8 +669,12 @@ header .right-elements__button:active {
   align-items: stretch;
   gap: 10px;
 }
+.testimonials__container__bckBtn, .testimonials__container__nxtBtn {
+  display: none;
+}
 
 .testimony {
+  flex: 1;
   max-width: 200px;
   border: 2px solid black;
   color: white;
@@ -561,6 +712,109 @@ header .right-elements__button:active {
   margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .section-testimonials .testimonials__container {
+    position: relative;
+    max-width: 600px;
+    overflow: hidden;
+    padding: 0 20px;
+    justify-content: space-around;
+  }
+  .section-testimonials .testimonials__container__bckBtn, .section-testimonials .testimonials__container__nxtBtn {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    z-index: 1;
+  }
+  .section-testimonials .testimonials__container__bckBtn img, .section-testimonials .testimonials__container__nxtBtn img {
+    width: 40px;
+  }
+  .section-testimonials .testimonials__container__bckBtn:first-child, .section-testimonials .testimonials__container__nxtBtn:first-child {
+    transform: translate(0, -50%) scaleX(-1);
+    right: auto;
+    left: 0;
+  }
+  .section-testimonials .testimonials__container__bckBtn:hover, .section-testimonials .testimonials__container__nxtBtn:hover {
+    filter: brightness(1.5);
+    transition: all 0.3s ease;
+  }
+  .section-testimonials .testimonials__container__bckBtn:active, .section-testimonials .testimonials__container__nxtBtn:active {
+    filter: brightness(0.5);
+  }
+  .section-testimonials .testimonials__container .testimony.pos0, .section-testimonials .testimonials__container .testimony.pos4 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+  }
+  .section-testimonials .testimonials__container .testimony.pos1 {
+    order: 0;
+    -webkit-animation: animateIn 0.3s ease forwards 1;
+            animation: animateIn 0.3s ease forwards 1;
+  }
+  .section-testimonials .testimonials__container .testimony.pos2 {
+    order: 1;
+    -webkit-animation: animateIn1 0.3s ease forwards 1;
+            animation: animateIn1 0.3s ease forwards 1;
+  }
+  .section-testimonials .testimonials__container .testimony.pos3 {
+    order: 2;
+    -webkit-animation: animateIn2 0.3s ease forwards 1;
+            animation: animateIn2 0.3s ease forwards 1;
+  }
+  @-webkit-keyframes animateIn {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @-webkit-keyframes animateIn1 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn1 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @-webkit-keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+  @keyframes animateIn2 {
+    from {
+      transform: scale(0.7);
+      filter: opacity(0) blur(10px);
+    }
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .section-testimonials .testimonials__container .testimony.pos3 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    -webkit-animation: none;
+            animation: none;
+  }
+}
 footer {
   background-color: white;
 }

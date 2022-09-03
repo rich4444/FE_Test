@@ -1,6 +1,10 @@
 .section-perks {
     margin-top: 20px;
     @include flex-justify(space-between);
+    &__bckBtn,
+    &__nxtBtn {
+        display: none;
+    }
     .perk {
         @include flex-justify;
         &__icon {
@@ -11,6 +15,33 @@
         &__text--bold {
             font-size: 0.8rem;
             font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .section-perks {
+        position: relative;
+        margin-top: 50px;
+        max-width: 600px;
+        min-height: 50px;
+        overflow: hidden;
+        padding: 0 20px;
+        justify-content: space-around;
+
+        &__bckBtn,
+        &__nxtBtn {
+            @include slider-buttons;
+        }
+
+        .perk {
+            @include sliders;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            &__icon {
+                margin-right: 0;
+            }
         }
     }
 }

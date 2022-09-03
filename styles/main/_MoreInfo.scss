@@ -2,8 +2,8 @@
     margin-top: 20px;
     @include flex-justify(space-between);
     gap: 10px;
-    .section-more-info__bckBtn,
-    .section-more-info__nxtBtn {
+    &__bckBtn,
+    &__nxtBtn {
         display: none;
     }
     .info-card {
@@ -12,6 +12,7 @@
         text-align: center;
         padding: 20px;
         border-radius: 5px;
+        height: 100%;
 
         &__title {
             font-size: 1.1rem;
@@ -26,8 +27,6 @@
     }
 }
 
-$breakpoint-tablet: 768px;
-
 @media (max-width: $breakpoint-tablet) {
     .section-more-info {
         position: relative;
@@ -35,63 +34,13 @@ $breakpoint-tablet: 768px;
         overflow: hidden;
         padding: 0 20px;
 
-        .section-more-info__bckBtn,
-        .section-more-info__nxtBtn {
-            position: absolute;
-            display: block;
-            background-color: transparent;
-            border: none;
-            right: 0;
-            z-index: 1;
-            img {
-                width: 40px;
-            }
-            &:first-child {
-                transform: scaleX(-1);
-                right: auto;
-                left: 0;
-            }
-            &:hover {
-                filter: brightness(1.5);
-                transition: all 0.3s ease;
-            }
-            &:active {
-                filter: brightness(0.5);
-            }
+        &__bckBtn,
+        &__nxtBtn {
+            @include slider-buttons;
         }
 
         .info-card {
-            //Hide cards that wont be show
-            &.pos0,
-            &.pos3,
-            &.pos4 {
-                position: absolute;
-                height: 100%;
-                top: 0;
-                left: 0;
-                transform: translateX(-110%);
-            }
-
-            &.pos1 {
-                order: 0;
-                animation: animateIn .7s ease forwards 1;
-            }
-            &.pos2 {
-                order: 1;
-                animation: animateIn1 .7s ease forwards 1;
-            }
-
-            //Duplicated keyframes to prevent errors when sliding fast
-            @keyframes animateIn {
-                from {
-                    filter: opacity(0) blur(5px);
-                }
-            }
-            @keyframes animateIn1 {
-                from {
-                    filter: opacity(0) blur(5px);
-                }
-            }
+            @include sliders;
         }
     }
 }

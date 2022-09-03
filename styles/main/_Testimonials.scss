@@ -6,10 +6,16 @@
         @include flex-justify;
         align-items: stretch;
         gap: 10px;
+
+        &__bckBtn,
+        &__nxtBtn {
+            display: none;
+        }
     }
 }
 
 .testimony {
+    flex: 1;
     max-width: 200px;
     border: 2px solid black;
     color: white;
@@ -43,5 +49,26 @@
     }
     &__name {
         margin-top: 20px;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .section-testimonials {
+        .testimonials__container {
+            position: relative;
+            max-width: 600px;
+            overflow: hidden;
+            padding: 0 20px;
+            justify-content: space-around;
+
+            &__bckBtn,
+            &__nxtBtn {
+                @include slider-buttons;
+            }
+
+            .testimony {
+                @include sliders;
+            }
+        }
     }
 }
