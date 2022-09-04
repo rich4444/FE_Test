@@ -5,13 +5,14 @@
     justify-content: flex-start;
     height: 50px;
     position: relative;
-    width: $max-width-large;
-    max-width: 100%;
+    max-width: $max-width-large;
+    width: fit-content;
     font-family: $rubik;
     margin: auto;
     margin-top: 20px;
     border-radius: 0 50px 50px 0;
     overflow: hidden;
+    padding: 0 20px 0 0;
 
     &::before {
         content: "";
@@ -30,6 +31,7 @@
     #title {
         margin: 0 10px;
         height: 100%;
+        color: black;
     }
 
     #carousel {
@@ -43,6 +45,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            .iso-price {
+                color: black;
+            }
 
             .iso-container {
                 padding: 5px;
@@ -111,26 +116,35 @@
     }
 
     .btc-calculator {
-        margin-left: auto;
+        margin-left: 20px;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         select,
         label {
-            background-color: transparent;
+            background-color: #ffffff8f;
+            color: #333;
+            height: 50%;
+            padding: 5px 10px;
+            border-radius: 15px 0 0 15px;
             border: none;
             outline: none;
         }
+        select {
+            border-radius: 0;
+            padding:0;
+        }
         input {
+            height: 50%;
             padding: 5px 10px;
             border: none;
             outline: none;
-            border-radius: 15px;
-            width: 100px;
-            text-align: right;
-            &:last-child {
-                margin-right: 20px;
+            border-radius:0;
+            width: 60px;
+            &:last-child{
+                border-radius: 0 15px 15px 0;
+                width: 100px;
             }
         }
     }
@@ -138,7 +152,7 @@
 
 @media (max-width: $breakpoint-tablet) {
     .btc-widget {
-        width: 90%;
+        width: fit-content;
         max-width: 600px;
         .btc-calculator {
             display: none;
@@ -146,6 +160,7 @@
     }
     @media (max-width: $breakpoint-phone) {
         .btc-widget {
+            max-width: 100%;
             #carousel {
                 .carousel-item {
                     .iso-container {
@@ -158,6 +173,9 @@
 
     @media (max-width: $breakpoint-small-phone) {
         .btc-widget {
+            .iso-price {
+                font-size: 1rem;
+            }
             #title,
             .carousel-buttons {
                 display: none;

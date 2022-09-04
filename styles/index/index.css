@@ -1314,13 +1314,16 @@ footer {
   justify-content: flex-start;
   height: 50px;
   position: relative;
-  width: 950px;
-  max-width: 100%;
+  max-width: 950px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-family: rubik, sans-serif;
   margin: auto;
   margin-top: 20px;
   border-radius: 0 50px 50px 0;
   overflow: hidden;
+  padding: 0 20px 0 0;
 }
 .btc-widget::before {
   content: "";
@@ -1337,6 +1340,7 @@ footer {
 .btc-widget #title {
   margin: 0 10px;
   height: 100%;
+  color: black;
 }
 .btc-widget #carousel {
   height: 100%;
@@ -1349,6 +1353,9 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.btc-widget #carousel .carousel-item .iso-price {
+  color: black;
 }
 .btc-widget #carousel .carousel-item .iso-container {
   padding: 5px;
@@ -1413,7 +1420,7 @@ footer {
   filter: brightness(0.5);
 }
 .btc-widget .btc-calculator {
-  margin-left: auto;
+  margin-left: 20px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -1421,25 +1428,36 @@ footer {
 }
 .btc-widget .btc-calculator select,
 .btc-widget .btc-calculator label {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5607843137);
+  color: #333;
+  height: 50%;
+  padding: 5px 10px;
+  border-radius: 15px 0 0 15px;
   border: none;
   outline: none;
 }
+.btc-widget .btc-calculator select {
+  border-radius: 0;
+  padding: 0;
+}
 .btc-widget .btc-calculator input {
+  height: 50%;
   padding: 5px 10px;
   border: none;
   outline: none;
-  border-radius: 15px;
-  width: 100px;
-  text-align: right;
+  border-radius: 0;
+  width: 60px;
 }
 .btc-widget .btc-calculator input:last-child {
-  margin-right: 20px;
+  border-radius: 0 15px 15px 0;
+  width: 100px;
 }
 
 @media (max-width: 768px) {
   .btc-widget {
-    width: 90%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     max-width: 600px;
   }
   .btc-widget .btc-calculator {
@@ -1447,11 +1465,17 @@ footer {
   }
 }
 @media (max-width: 768px) and (max-width: 568px) {
+  .btc-widget {
+    max-width: 100%;
+  }
   .btc-widget #carousel .carousel-item .iso-container {
     display: none;
   }
 }
 @media (max-width: 768px) and (max-width: 368px) {
+  .btc-widget .iso-price {
+    font-size: 1rem;
+  }
   .btc-widget #title,
 .btc-widget .carousel-buttons {
     display: none;
