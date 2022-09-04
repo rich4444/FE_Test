@@ -16,7 +16,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/index/index.css">
     <!-- JAVASCRIPT -->
-    <script src="scripts.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/widget.js" defer></script>
 </head>
 
 <body>
@@ -102,6 +103,32 @@
             <button class="section-more-info__nxtBtn" id="infoCards_nxtBtn"><img src="./images/next-button.webp"
                     alt="next button"></button>
         </section>
+
+
+        <!--WIDGET-->
+        <div class="btc-widget">
+            <img id="btc-logo" src="./images/bitcoin-logo.webp" width="50" alt="bitcoin logo">
+            <h1 id="title">1 BTC = </h1>
+
+            <div class="carousel-buttons">
+                <button id="upButton"><img src="./images/arrow.png" alt="up button"></button>
+                <button id="downButton"><img src="./images/arrow.png" alt="down button"></button>
+            </div>
+
+            <div id="carousel"></div>
+
+            <div class="btc-calculator">
+                <label for="btc-amount">BTC</label>
+                <input type="number" name="btc-amount" id="btc-amount">
+                <select name="currency" id="currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <input type="number" name="currency-amount" id="currency-amount">
+            </div>
+        </div>
+
 
         <!--PERKS SECTION-->
         <section class="section-perks">
