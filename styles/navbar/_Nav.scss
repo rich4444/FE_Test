@@ -26,6 +26,11 @@ nav {
                 font-family: $saira--condensed;
                 font-weight: 700;
                 font-size: 0.8rem;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.3s ease;
+                    color: $highlight-color;
+                }
             }
         }
 
@@ -43,15 +48,13 @@ nav {
                 margin-right: 10px;
             }
             &__login-button {
-                @include button-style(
-                    transparent,
-                    $highlight-color,
-                    0,
-                    0.8rem,
-                    $saira--condensed,
-                    700
-                );
-                padding: 0;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+                color: $highlight-color;
+                font-family: $saira--condensed;
+                font-size: 0.8rem;
+                font-weight: 700;
             }
             &__join-button,
             &__login-button {
@@ -73,7 +76,7 @@ nav {
                 flex-direction: column;
                 text-align: left;
                 gap: 20px;
-                transition: all 0.5s ease;
+                transition: all 0.3s ease;
                 position: relative;
 
                 &__item {
@@ -103,6 +106,7 @@ nav {
             position: absolute;
             top: 30px;
             right: 20px;
+            cursor: pointer;
 
             &.closed {
                 .open-close-navbar__button {

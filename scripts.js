@@ -103,6 +103,8 @@ closeOpenButton.addEventListener("click", () => {
     navbar.classList.toggle("closed");
     user.classList.toggle("closed");
     closeOpenButton.classList.toggle("closed");
-    document.body.style.overflowY =
-        document.body.style.overflowY === "hidden" ? "visible" : "hidden";
+
+    //Stop scrollig when menu open?
+    //document.body.style.overflowY =
+    //    document.body.style.overflowY === "hidden" ? "visible" : "hidden";
 });
